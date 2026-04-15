@@ -8,22 +8,38 @@
     <link rel="icon" type="image/x-icon" href="images/steam-icon.png">
 </head>
 <body>
-    <div class="page-wrapper">
-        <h1 id="title"><span id="title-text"></span><span class="cursor">|</span></h1>
+    <script>
+        // Prevent scrolling with mouse wheel and arrow keys
+    document.addEventListener("wheel", e => e.preventDefault(), { passive: false });
+
+    document.addEventListener("keydown", function (e) {
+    const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
+    if (keys.includes(e.key)) e.preventDefault();
+    });
+    </script>
+
+    <section id="home-page">
+        <h1 class="title-homepage" id="title"><span id="title-text"></span><span class="cursor">|</span></h1>
 
         <div class="container">
-            <div class="card">
-                <h2>Projects</h2>
-                <p>Explore the many projects I've worked on and what I've been developing.</p>
-            </div>
-            <div class="card">
-                <h2>Personal Skills</h2>
-                <p>Explains some of my strengths and areas for improvement.</p>
-            </div>
-            <div class="card">
-                <h2>Contact information</h2>
-                <p>Find <i>public</i> ways to contact me.</p>
-            </div>
+            <a href="#projects" style="text-decoration: none;">
+                <div class="card">
+                    <h2>Projects</h2>
+                    <p>Explore the many projects I've worked on and what I've been developing.</p>
+                </div>
+            </a>
+            <a href="#skills" style="text-decoration: none;">
+                <div class="card">
+                    <h2>Personal Skills</h2>
+                    <p>Explains some of my strengths and areas for improvement.</p>
+                </div>
+            </a>
+            <a href="#contact" style="text-decoration: none;">
+                <div class="card">
+                    <h2>Contact information</h2>
+                    <p>Find <i>public</i> ways to contact me.</p>
+                </div>
+            </a>
         </div>
         <div class="quote-box">
             <p class="quote"><i>“In the midst of chaos, there is also opportunity” - Sun Tzu</i></p>
@@ -31,7 +47,20 @@
         <div class="welcome">
             <p>Welcome, XK-SQS.</p>
         </div>
-    </div>
+    </section>
+
+    <section id="projects">
+        <h1 id="title" class="title-projects">Projects<span class="cursor">|</span></h1>
+    </section>
+
+    <section id="skills">
+        <h1 id="title" class="title-skills">Personal Skills<span class="cursor">|</span></h1>
+    </section>
+
+    <section id="contact">
+        <h1 id="title" class="title-contact">Contact Information<span class="cursor">|</span></h1>
+    </section>
+
     <script src="main.js" ></script>
 </body>
 </html>
