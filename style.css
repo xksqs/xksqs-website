@@ -39,7 +39,7 @@ section {
 .container {
     max-width: 70vw;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     gap: 1vw;
 }
 
@@ -76,15 +76,21 @@ section {
     font-size: 1vw;
 }
 
-.title-homepage {
+#title_h {
     top: 0; /* Breaks the entire site without this */
+    position: absolute;
+    padding: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 5vw;
+    font-family: monospace;
 }
 
 #title {
+    position: relative;
     padding: 4vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
     color: white;
     font-size: 5vw;
     font-family: monospace;
@@ -142,5 +148,67 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     font-family: monospace;
     color: #fff;
-    gap: 1vh;
+}
+
+#projects, #skills, #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-info {
+    font-family: verdana;
+    font-size: 2vw;
+    color: #fff;
+    margin-top: 0;
+    text-align: center;
+    padding: 3vh 0;
+}
+
+.no-worry {
+    font-family: verdana;
+    font-size: 1vw;
+    color: #fff;
+    text-align: center;
+    margin-top: -2vh;
+}
+
+.skills-info {
+    font-family: verdana;
+    font-size: 1vw;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5vh;
+    max-width: 60vw;
+}
+
+.skills-list {
+    list-style-type: disc;
+    text-align: left;
+    font-family: verdana;
+    font-size: 1vw;
+    color: #fff;
+    margin-bottom: 5vh;
+}
+
+
+.back-to-top {
+    text-decoration: none;
+    color: #333;
+    margin-top: auto;
+    margin-bottom: 3vh;
+    min-width: 20vw;
+}
+
+.btt-box {
+    background: #fff;
+    border-radius: 1vh;
+    padding: 1vh 2vw;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.back-to-top:hover .btt-box {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }

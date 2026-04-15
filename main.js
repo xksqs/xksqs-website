@@ -1,3 +1,4 @@
+// Typewriter effect for the title text
 function typeEffect(elementId, text, speed) {
     const element = document.getElementById(elementId);
     const cursor = document.querySelector('.cursor');
@@ -38,3 +39,24 @@ function reverseTypeEffect(elementId, speed) {
 }
 
 typeEffect('title-text', 'Hello, World!', 70);
+
+// Title change depending on visibility
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    document.title = "See you next time!";
+  } else {
+    document.title = "xksqs";
+  }
+});
+
+// Mobile Warning
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile) {
+    alert("This website is NOT meant for mobile devices, I promise to you this site will not work on mobile. Please use a desktop or laptop to view this site.");
+}
+
+// Fix scroll snapping 
+if (!window.location.href.includes("#")) {
+    window.location.href += "#";
+}
