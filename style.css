@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6C3BAA 0%, #A7C7E7 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+}
+
+.page-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 5vh;
+}
+
+.container {
+    max-width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1vw;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    height: 25vh;
+    width: 20vw;
+    padding: 2.5vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 1vh;
+    font-size: 1.5vw;
+    background: linear-gradient(135deg, #6C3BAA 0%, #A7C7E7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1vw;
+}
+
+#title {
+    position: absolute;
+    top: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 5vw;
+    font-family: monospace;
+}
+
+.cursor {
+    color: white;
+    font-weight: 1;
+    animation: blink 1s step-start infinite;
+}
+
+.cursor.typing {
+    animation: none;
+    opacity: 1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.quote-box {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25vw;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5vh 2vw;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.quote {
+    font-size: 0.7vw;
+    color: #fff;
+}
+
+.quote-box:hover {
+    cursor: not-allowed;
+}
