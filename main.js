@@ -12,7 +12,7 @@ function typeEffect(elementId, text, speed) {
             setTimeout(type, speed);
         } else {
             cursor.classList.remove('typing');  // start blinking during pause
-            setTimeout(() => reverseTypeEffect(elementId, 100), 3000);
+            setTimeout(() => reverseTypeEffect(elementId, 130), 3000);
         }
     }
 
@@ -30,11 +30,11 @@ function reverseTypeEffect(elementId, speed) {
             setTimeout(deleteChar, speed);
         } else {
             cursor.classList.remove('typing');  // start blinking during pause
-            setTimeout(() => typeEffect(elementId, 'Hello, World!', 50), 1000);
+            setTimeout(() => typeEffect(elementId, 'Hello, World!', 70), 1400);
         }
     }
 
     deleteChar();
 }
 
-typeEffect('title-text', 'Hello, World!', 50);
+typeEffect('title-text', 'Hello, World!', 70);

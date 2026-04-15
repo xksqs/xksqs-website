@@ -7,6 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #6C3BAA 0%, #A7C7E7 100%);
+    overflow: hidden;
     min-height: 100vh;
     padding: 40px 20px;
     display: flex;
@@ -31,7 +32,7 @@ body {
 
 .card {
     background: white;
-    border-radius: 16px;
+    border-radius: 1vh;
     height: 25vh;
     width: 20vw;
     padding: 2.5vh;
@@ -95,7 +96,7 @@ body {
     width: 25vw;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
-    border-radius: 16px;
+    border-radius: 1vh;
     padding: 1.5vh 2vw;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -108,4 +109,20 @@ body {
 
 .quote-box:hover {
     cursor: not-allowed;
+}
+
+.welcome {
+    font-size: 1vw;
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 1vh;
+    padding: 2vh 3vw;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    font-family: monospace;
+    color: #fff;
+    gap: 1vh;
 }
