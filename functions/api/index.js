@@ -13,3 +13,12 @@ export async function onRequestPost({ request }) {
         }
     );
 }
+
+export async function onRequestGet() {
+    return new Response("Send a POST request to use this API", {
+        status: 200,
+        headers: {
+            "Content-Type": "text/plain"
+        }
+    });
+}
