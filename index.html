@@ -8,15 +8,11 @@
     <link rel="icon" type="image/x-icon" href="images/steam-icon.png">
 </head>
 <body>
-    <script>
-        // Prevent scrolling with mouse wheel and arrow keys
-    document.addEventListener("wheel", e => e.preventDefault(), { passive: false });
+    <noscript>
+    <p style="color: red; text-align: center; position: relative;">DETECTED: Javascript is disabled. Site still usable, however expect reduced snapping support.</p>
+    </noscript>
 
-    document.addEventListener("keydown", function (e) {
-    const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
-    if (keys.includes(e.key)) e.preventDefault();
-    });
-    </script>
+
 
     <section id="home-page">
         <h1 id="title_h" class="title-homepage"><span id="title-text"></span><span class="cursor">|</span></h1>
@@ -50,7 +46,8 @@
     </section>
 
     <section id="projects">
-        <h1 id="title" class="title-projects">Projects<span class="cursor">|</span></h1>
+        <h1 id="title">Projects<span class="cursor">|</span></h1>
+        <p class="cliff-hanger">more to come...</p>
         <a href="#home-page" class="back-to-top">
             <div class="btt-box">
                 back to top..
@@ -59,18 +56,20 @@
     </section>
 
     <section id="skills">
-        <h1 id="title" class="title-skills">Personal Skills<span class="cursor">|</span></h1>
-        <p class="skills-info">I have knowledge in back-end development and cyber-security, as well as being proficient in Godot's 2D/3D engines, giving me knowledge of things as, but not limited to:</p>
-        <ul class="skills-list">
-            <li>3D gridding</li>
-            <li>Movement and mathematical processes</li>
-            <li>Game design principles</li>
-        </ul>
+        <h1 id="title">Personal Skills<span class="cursor">|</span></h1>
+        <div class="skills-readability">
+            <p class="skills-info">I have knowledge in back-end development and cyber-security, as well as being proficient in Godot's 2D/3D engines, giving me knowledge of things as, but not limited to:</p>
+            <ul class="skills-list">
+                <li>3D gridding</li>
+                <li>Movement and mathematical processes</li>
+                <li>Game design principles</li>
+            </ul>
 
-        <p class="skills-info">A weakness I come across is that I often plan too high of expectations for myself and never completely get to finish a project.</p>
-        <p class="skills-info">Although, in recent years I've been working on, and subsequently, taught myself a new mentality allowing myself to work faster and more efficient, allowing me to complete projects completely, and to what I would consider to be myself hardest efforts.</p>
+            <p class="skills-info">Of recent times, I have grown more proficient in cryptography and networking security as my interest in these areas has deepened. Through this time, I have found myself like the idea of passkeys and hashing algorithms more and more fascinating through research and YouTube documentaries.</p>
 
-        <p class="skills-info">Of recent times, I have grown more proficient in cryptography and networking security as my interest in these areas has deepened. Through this time, I have found myself like the idea of passkeys and hashing algorithms more and more fascinating through research and YouTube documentaries.</p>
+            <p class="skills-info">A weakness I come across is that I often plan too high of expectations for myself and never completely get to finish a project. This has had effects on my productivity and the overall count of done projects to my name.</p>
+            <p class="skills-info">Although, in recent years I've been improving on, and subsequently reworked my mentality, making myself work faster and more efficient, allowing me to finish my set projects completely, and to what I would consider to be my hardest effort.</p>
+        </div>
 
         <a href="#home-page" class="back-to-top">
             <div class="btt-box">
@@ -80,7 +79,7 @@
     </section>
 
     <section id="contact">
-        <h1 id="title" class="title-contact">Contact Information<span class="cursor">|</span></h1>
+        <h1 id="title">Contact Information<span class="cursor">|</span></h1>
         <p class="contact-info">Email: <code>spam@xksqs.xyz</code></p>
         <p class="no-worry">(I don't only use it for spam, don't worry.)</p>
         <p class="contact-info">Discord: <code>_c_a_t_#0</code></p>

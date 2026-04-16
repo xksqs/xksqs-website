@@ -40,6 +40,14 @@ function reverseTypeEffect(elementId, speed) {
 
 typeEffect('title-text', 'Hello, World!', 70);
 
+// Remove client-sided scrolling
+document.addEventListener("wheel", e => e.preventDefault(), { passive: false });
+
+document.addEventListener("keydown", function (e) {
+const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
+if (keys.includes(e.key)) e.preventDefault();
+});
+
 // Title change depending on visibility
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
@@ -54,9 +62,4 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 
 if (isMobile) {
     alert("This website is NOT meant for mobile devices, I promise to you this site will not work on mobile. Please use a desktop or laptop to view this site.");
-}
-
-// Fix scroll snapping 
-if (!window.location.href.includes("#")) {
-    window.location.href += "#";
 }

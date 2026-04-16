@@ -11,7 +11,7 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(95deg, #6C3BAA 0%, #A7C7E7 100%);
+    background: linear-gradient(95deg, #6C3BAA 40%, #022ba6 100%);
     flex-direction: column;
     overflow-y: scroll;
     /*overflow: hidden;*/
@@ -64,7 +64,7 @@ section {
     color: #333;
     margin-bottom: 1vh;
     font-size: 1.5vw;
-    background: linear-gradient(95deg, #6C3BAA 0%, #A7C7E7 100%);
+    background: linear-gradient(95deg, #6C3BAA 40%, #022ba6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -176,9 +176,8 @@ section {
     font-family: verdana;
     font-size: 1vw;
     color: #fff;
-    text-align: center;
-    margin-bottom: 5vh;
-    max-width: 60vw;
+    text-align: left;
+    margin-bottom: 4vh; 
 }
 
 .skills-list {
@@ -187,9 +186,25 @@ section {
     font-family: verdana;
     font-size: 1vw;
     color: #fff;
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
+    padding-left: 1.5em;
+}
+.skills-readability {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 1vh;
+    padding: 1.5vh 2vw;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.cliff-hanger {
+    font-family: verdana;
+    font-size: 0.7vw;
+    color: #333;
+    text-align: center;
+    margin-top: -2vh;
+}
 
 .back-to-top {
     text-decoration: none;
