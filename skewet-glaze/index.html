@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bait">
+  <video autoplay loop muted class="bait-video">
+    <source src="sunset.mp4" type="video/mp4">
+  </video>
+  <p class="bait-text">This website requires you to simply click before reaching.</p>
+  </div>
+
+  <div class="ticker">
+  <div class="track">
+    <!-- first set -->
+    <img src="images/skewet.png" alt="Skewet">
+    <img src="images/skewet.png" alt="Skewet">
+    <img src="images/skewet.png" alt="Skewet">
+
+    <!-- duplicate set -->
+    <img src="images/skewet.png" alt="Skewet">
+    <img src="images/skewet.png" alt="Skewet">
+    <img src="images/skewet.png" alt="Skewet">
+  </div>
+
+  <img src="images/skewet.png" id="jumpscare">
+</div>
+
+<div id="heartbeat">
+    <p>HEARTRATE: <span id="heartbeat-value">0</span></p>
+</div>
+
+<button id="make-it-stop">make it stop...</button>
+
+<script src="main.js"></script>
+</body>
+</html>
