@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.img {
+    width: 100vh;
+    height: 20vh;
+}
+
+.ticker {
+  overflow: hidden;
+  height: 20vh; /* matches image height */
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 12s linear infinite;
+}
+
+.track img {
+  width: 100vh;
+  height: 20vh;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300vh); /* 3 images × 100vh */
+  }
+}
+
+#heartbeat {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 20px black, 0 0 40px black;
+    font-size: 10vh;
+}
+
+.skewet-glaze {
+    z-index: -1;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 20px black, 0 0 40px black;
+    font-size: 1vh;
+}
