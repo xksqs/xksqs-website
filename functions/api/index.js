@@ -8,16 +8,13 @@ Version: 0.1
 
 const bcrypt = require("bcryptjs");
 
-let password;
 
 export async function onRequestPost({ request }) {
     const data = await request.json();
 
-    password = data
-
     return new Response(
         JSON.stringify({
-            received: await hashPassword(data),
+            received: await hashPassword(data.password),
             status: "OK"
         }),
         {
