@@ -6,9 +6,9 @@ Version: 0.1
 
 const bcrypt = require("bcryptjs");
 
-async function add_to_table(username, password_hash) {
-    await env.DB.prepare(
-        "INSERT INTO users (username, password) VALUES (?, ?)"
+async function add_to_table(env, username, password_hash) {
+    return await env.DB.prepare(
+        "INSERT INTO users (username, password_hash) VALUES (?, ?)"
     )
     .bind(username, password_hash)
     .run();
@@ -24,42 +24,43 @@ export async function onRequestPost({ request, env }) {
         const data = await request.json();
 
         if (!data.password || !data.username) {
-            return new Response(JSON.stringify({ error: "Missing parameters" }), {
-                status: 400,
-                headers: { "Content-Type": "application/json" }
-            });
+            return Response.json(
+                { error: "Missing parameters" },
+                { status: 400 }
+            );
         }
 
-        const hash = await hashPassword(data.password);
-
         const existing = await env.DB.prepare(
-        "SELECT 1 FROM users WHERE username = ?"
+            "SELECT 1 FROM users WHERE username = ?"
         )
         .bind(data.username)
         .first();
 
         if (existing) {
-            return Response.json({ error: "Username already taken" });
-        } else {
-            add_to_table(data.username, hash)
+            return Response.json(
+                { error: "Username already taken" },
+                { status: 409 }
+            );
         }
 
-        return new Response(JSON.stringify({ status: "OK" }), {
-            headers: { "Content-Type": "application/json" }
-        });
+        const hash = await hashPassword(data.password);
+
+        await add_to_table(env, data.username, hash);
+
+        return Response.json({ status: "OK" });
 
     } catch (err) {
-        return new Response(JSON.stringify({
-            error: err.message
-        }), {
-            status: 500,
-            headers: { "Content-Type": "application/json" }
-        });
+        return Response.json(
+            { error: err.message },
+            { status: 500 }
+        );
     }
 }
 
 export async function onRequestGet({ env }) {
-  return new Response(JSON.stringify({
-    keys: Object.keys(env || {})
-  }));
+    const { results } = await env.DB.prepare(
+        "SELECT username FROM users"
+    ).all();
+
+    return Response.json({ users: results });
 }
