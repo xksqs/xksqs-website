@@ -17,7 +17,7 @@ export async function onRequestPost({ request }) {
 
     return new Response(
         JSON.stringify({
-            received: hashPassword(data),
+            received: await hashPassword(data),
             status: "OK"
         }),
         {
