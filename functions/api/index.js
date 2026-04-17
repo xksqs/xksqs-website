@@ -13,6 +13,13 @@ export async function onRequestPost({ request }) {
 
         const hash = await hashPassword(data.password);
 
+        await env.user_db.prepare(
+            "INSERT INTO users (username, password) VALUES (?, ?)"
+        )
+        .bind(data.username, hash)
+        .run();
+
+
         return new Response(JSON.stringify({
             status: "OK"
         }), {
@@ -29,10 +36,12 @@ export async function onRequestPost({ request }) {
     }
 }
 
-export async function onRequestGet() {
-    return new Response(JSON.stringify({
-        message: "Send a POST request"
-    }), {
+export async function onRequestGet({ env }) {
+    const result = await env.DB.prepare(
+        "SELECT id, username FROM users"
+    ).all();
+
+    return new Response(JSON.stringify(result.results), {
         headers: { "Content-Type": "application/json" }
     });
 }
