@@ -1,7 +1,7 @@
 {
   "d1_databases": [
     {
-      "binding": "user_db",
+      "binding": "DB",
       "database_name": "user-db",
       "database_id": "3d18150d-a9d4-42e6-8391-db7d859c02d5"
     }
