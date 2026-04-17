@@ -35,7 +35,7 @@ export async function onRequestPost({ request, env }) {
         const existing = await env.DB.prepare(
         "SELECT 1 FROM users WHERE username = ?"
         )
-        .bind(username)
+        .bind(data.username)
         .first();
 
         if (existing) {
