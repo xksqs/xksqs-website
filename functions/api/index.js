@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 
-export async function onRequestPost({ request }) {
+export async function onRequestPost({ request, env }) {
     try {
         const data = await request.json();
 
@@ -13,22 +13,19 @@ export async function onRequestPost({ request }) {
 
         const hash = await hashPassword(data.password);
 
-        await env.user_db.prepare(
+        await env.DB.prepare(
             "INSERT INTO users (username, password) VALUES (?, ?)"
         )
         .bind(data.username, hash)
         .run();
 
-
-        return new Response(JSON.stringify({
-            status: "OK"
-        }), {
+        return new Response(JSON.stringify({ status: "OK" }), {
             headers: { "Content-Type": "application/json" }
         });
 
     } catch (err) {
         return new Response(JSON.stringify({
-            error: "Invalid JSON or server error"
+            error: err.message
         }), {
             status: 500,
             headers: { "Content-Type": "application/json" }
