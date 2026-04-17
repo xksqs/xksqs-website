@@ -18,7 +18,7 @@ function fpost(url, name, pw) {
 }
 
 submit.addEventListener("click", () => {
-    fpost("https://xksqs-website.pages.dev/api", form.elements["username"], form.elements["password"])
+    fpost("https://xksqs-website.pages.dev/api", form.elements["username"].value, form.elements["password"].value)
 });
 
 
