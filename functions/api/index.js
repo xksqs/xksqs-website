@@ -34,13 +34,9 @@ export async function onRequestPost({ request, env }) {
 }
 
 export async function onRequestGet({ env }) {
-    const result = await env.DB.prepare(
-        "SELECT id, username FROM users"
-    ).all();
-
-    return new Response(JSON.stringify(result.results), {
-        headers: { "Content-Type": "application/json" }
-    });
+  return new Response(JSON.stringify({
+    keys: Object.keys(env || {})
+  }));
 }
 
 async function hashPassword(password) {
