@@ -2,3 +2,4 @@
 binding = "DB"
 database_name = "user-db"
 database_id = "3d18150d-a9d4-42e6-8391-db7d859c02d5"
+pages_build_output_dir = "dist"

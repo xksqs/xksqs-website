@@ -1,3 +1,9 @@
+/*
+Name: Serverside Password Manager (JS)
+Author: xksqs
+Version: 0.1
+*/
+
 const bcrypt = require("bcryptjs");
 
 export async function onRequestPost({ request, env }) {
