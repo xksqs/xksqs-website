@@ -4,8 +4,8 @@ export async function onRequestPost({ request }) {
     try {
         const data = await request.json();
 
-        if (!data.password) {
-            return new Response(JSON.stringify({ error: "Missing password" }), {
+        if (!data.password || !data.username) {
+            return new Response(JSON.stringify({ error: "Missing parameters" }), {
                 status: 400,
                 headers: { "Content-Type": "application/json" }
             });
@@ -14,7 +14,6 @@ export async function onRequestPost({ request }) {
         const hash = await hashPassword(data.password);
 
         return new Response(JSON.stringify({
-            received: hash,
             status: "OK"
         }), {
             headers: { "Content-Type": "application/json" }
