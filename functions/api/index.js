@@ -6,7 +6,7 @@ Version: 0.1
 
 */
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 let password;
 
