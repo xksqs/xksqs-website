@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 
 async function add_to_table(env, username, password_hash) {
     return await env.DB.prepare(
-        "INSERT INTO users (username, password_hash) VALUES (?, ?)"
+        "INSERT INTO users (username, password) VALUES (?, ?)"
     )
     .bind(username, password_hash)
     .run();
